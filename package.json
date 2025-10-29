@@ -1,0 +1,34 @@
+{
+  "name": "@assessment/monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Assessment monorepo with Next.js, NestJS, and shared schemas",
+  "engines": {
+    "node": ">=22.0.0",
+    "pnpm": ">=9.0.0"
+  },
+  "packageManager": "pnpm@10.18.3",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "test:unit": "turbo run test:unit",
+    "test:e2e": "turbo run test:e2e",
+    "lint": "turbo run lint",
+    "type-check": "turbo run type-check",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format-check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "qa": "pnpm format && pnpm type-check && pnpm lint && pnpm build && pnpm test",
+    "clean": "turbo run clean && rm -rf node_modules .turbo",
+    "docker:up": "docker compose -f infrastructure/docker/compose.yml up -d",
+    "docker:down": "docker compose -f infrastructure/docker/compose.yml down",
+    "docker:logs": "docker compose -f infrastructure/docker/compose.yml logs -f",
+    "setup": "pnpm --filter @assessment/api db:setup "
+  },
+  "devDependencies": {
+    "@types/node": "^24.7.2",
+    "prettier": "^3.6.2",
+    "turbo": "^2.5.8",
+    "typescript": "^5.9.3"
+  }
+}
