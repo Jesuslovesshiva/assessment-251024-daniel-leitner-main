@@ -1,3 +1,7 @@
+# Assessment completed. 30.10.2025
+
+---
+
 # Assessment
 
 TypeScript monorepo with NestJS API and Next.js frontend.
