@@ -1,5 +1,4 @@
 # Assessment completed. 30.10.2025
-
 ---
 
 # Assessment
